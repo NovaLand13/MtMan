@@ -83,6 +83,28 @@ namespace MtMan
             return returnThese;
         }
 
+        internal int addJob(Job job)
+        {
+            //connect to database
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            //Define the sql statment to fetch all jobs
+            MySqlCommand command = new MySqlCommand("INSERT INTO `job`(`Amount`, `Payment_Type`, `Date_Billed`, `Date_Paid`, 'Service_Date', 'Description') VALUES (@Amount, @Payment_Type, @Date_Billed, @Date_Paid, @Service_Date, @Description)", connection);
+
+            command.Parameters.AddWithValue("@Amount", job.Amount);
+            command.Parameters.AddWithValue("@Payment_Type", job.PaymentType);
+            command.Parameters.AddWithValue("@Date_Billed", job.DateBilled);
+            command.Parameters.AddWithValue("@Date_Paid", job.DatePaid);
+            command.Parameters.AddWithValue("@Service_Date", job.ServiceDate);
+            command.Parameters.AddWithValue("@Description", job.Description);
+
+            int newRows = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return newRows;
+        }
     }
 
 

@@ -35,8 +35,23 @@
             dataGridView2 = new DataGridView();
             label5 = new Label();
             JobFormBtn = new Button();
+            jobGB = new GroupBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            amountTB = new TextBox();
+            paymentTB = new TextBox();
+            dateBilledTB = new TextBox();
+            datePdTB = new TextBox();
+            serviceDateTB = new TextBox();
+            descriptionTB = new RichTextBox();
+            addJobBTN = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            jobGB.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -104,11 +119,141 @@
             JobFormBtn.UseVisualStyleBackColor = true;
             JobFormBtn.Click += JobFormBtn_Click;
             // 
+            // jobGB
+            // 
+            jobGB.Controls.Add(addJobBTN);
+            jobGB.Controls.Add(descriptionTB);
+            jobGB.Controls.Add(serviceDateTB);
+            jobGB.Controls.Add(datePdTB);
+            jobGB.Controls.Add(dateBilledTB);
+            jobGB.Controls.Add(paymentTB);
+            jobGB.Controls.Add(amountTB);
+            jobGB.Controls.Add(label7);
+            jobGB.Controls.Add(label6);
+            jobGB.Controls.Add(label4);
+            jobGB.Controls.Add(label3);
+            jobGB.Controls.Add(label2);
+            jobGB.Controls.Add(label1);
+            jobGB.Location = new Point(15, 14);
+            jobGB.Name = "jobGB";
+            jobGB.Size = new Size(309, 315);
+            jobGB.TabIndex = 9;
+            jobGB.TabStop = false;
+            jobGB.Text = "Job Information";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(51, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Amount";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(17, 69);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Payment Type";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(17, 107);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Date Billed";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(17, 145);
+            label4.Name = "label4";
+            label4.Size = new Size(57, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Date Paid";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(17, 183);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 15);
+            label6.TabIndex = 4;
+            label6.Text = "Service Date";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(17, 221);
+            label7.Name = "label7";
+            label7.Size = new Size(67, 15);
+            label7.TabIndex = 5;
+            label7.Text = "Description";
+            // 
+            // amountTB
+            // 
+            amountTB.Location = new Point(108, 27);
+            amountTB.Name = "amountTB";
+            amountTB.Size = new Size(174, 23);
+            amountTB.TabIndex = 6;
+            // 
+            // paymentTB
+            // 
+            paymentTB.Location = new Point(108, 65);
+            paymentTB.Name = "paymentTB";
+            paymentTB.Size = new Size(174, 23);
+            paymentTB.TabIndex = 7;
+            // 
+            // dateBilledTB
+            // 
+            dateBilledTB.Location = new Point(108, 103);
+            dateBilledTB.Name = "dateBilledTB";
+            dateBilledTB.Size = new Size(174, 23);
+            dateBilledTB.TabIndex = 8;
+            // 
+            // datePdTB
+            // 
+            datePdTB.Location = new Point(108, 141);
+            datePdTB.Name = "datePdTB";
+            datePdTB.Size = new Size(174, 23);
+            datePdTB.TabIndex = 9;
+            // 
+            // serviceDateTB
+            // 
+            serviceDateTB.Location = new Point(108, 179);
+            serviceDateTB.Name = "serviceDateTB";
+            serviceDateTB.Size = new Size(174, 23);
+            serviceDateTB.TabIndex = 10;
+            // 
+            // descriptionTB
+            // 
+            descriptionTB.Location = new Point(108, 217);
+            descriptionTB.Name = "descriptionTB";
+            descriptionTB.Size = new Size(174, 96);
+            descriptionTB.TabIndex = 11;
+            descriptionTB.Text = "";
+            // 
+            // addJobBTN
+            // 
+            addJobBTN.Location = new Point(18, 278);
+            addJobBTN.Name = "addJobBTN";
+            addJobBTN.Size = new Size(75, 23);
+            addJobBTN.TabIndex = 12;
+            addJobBTN.Text = "Add Job";
+            addJobBTN.UseVisualStyleBackColor = true;
+            addJobBTN.Click += addJobBTN_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 649);
+            Controls.Add(jobGB);
             Controls.Add(JobFormBtn);
             Controls.Add(label5);
             Controls.Add(dataGridView2);
@@ -120,6 +265,8 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            jobGB.ResumeLayout(false);
+            jobGB.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,5 +279,19 @@
         private DataGridView dataGridView2;
         private Label label5;
         private Button JobFormBtn;
+        private GroupBox jobGB;
+        private Label label2;
+        private Label label1;
+        private Label label7;
+        private Label label6;
+        private Label label4;
+        private Label label3;
+        private RichTextBox descriptionTB;
+        private TextBox serviceDateTB;
+        private TextBox datePdTB;
+        private TextBox dateBilledTB;
+        private TextBox paymentTB;
+        private TextBox amountTB;
+        private Button addJobBTN;
     }
 }

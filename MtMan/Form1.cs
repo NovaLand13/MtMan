@@ -52,15 +52,31 @@ namespace MtMan
             dataGridView2.DataSource = clientBindingSource;
         }
 
-       // private void groupBox1_Enter(object sender, EventArgs e){}
-       
+        private void groupBox1_Enter(object sender, EventArgs e){}
 
-      //  private void addClientBtn_Click(object sender, EventArgs e){ }
+
+        private void addClientBtn_Click(object sender, EventArgs e){ }
 
         private void JobFormBtn_Click(object sender, EventArgs e)
         {
             JobForm form = new JobForm();
             form.Show();
+        }
+
+        private void addJobBTN_Click(object sender, EventArgs e)
+        {
+            //Add new job to database
+            Job job = new Job();
+            {
+                
+
+                
+                
+            };
+
+            JobsDAO jobsDAO = new JobsDAO();
+            int result = jobsDAO.addJob(job);
+            MessageBox.Show(result + " new row(s) added");
         }
     }
 }
