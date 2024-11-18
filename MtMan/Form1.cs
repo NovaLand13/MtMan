@@ -5,6 +5,7 @@ namespace MtMan
         BindingSource jobBindingSource = new BindingSource();
         BindingSource clientBindingSource = new BindingSource();
 
+       
         public Form1()
         {
             InitializeComponent();
@@ -65,18 +66,42 @@ namespace MtMan
 
         private void addJobBTN_Click(object sender, EventArgs e)
         {
-            //Add new job to database
-            Job job = new Job();
+            try
             {
-                
+                // Validate and parse input
+                int amount = int.Parse(amountTB.Text);
+                string paymentType = paymentTB.Text;
+                DateTime dateBilled = DateTime.Parse(dateBilledTB.Text);
+                DateTime datePaid = DateTime.Parse(datePdTB.Text);
+                DateTime serviceDate = DateTime.Parse(serviceDateTB.Text);
+                string description = descriptionTB.Text;
+                int client_ID = 5;
 
-                
-                
-            };
+                // Create a new Job object
+                Job job = new Job
+                {
+                    Amount = amount,
+                    PaymentType = paymentType,
+                    DateBilled = dateBilled,
+                    DatePaid = datePaid,
+                    ServiceDate = serviceDate,
+                    Description = description,
+                    client_ID = client_ID
+                };
 
-            JobsDAO jobsDAO = new JobsDAO();
-            int result = jobsDAO.addJob(job);
-            MessageBox.Show(result + " new row(s) added");
+                JobsDAO jobsDAO = new JobsDAO();
+                int result = jobsDAO.addJob(job);
+            
+                MessageBox.Show("Job added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Invalid input: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

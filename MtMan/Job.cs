@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MtMan
 {
-    internal class Job
+    public class Job
     {
         public int ID { get; set; }
         public int Amount { get; set; }
@@ -15,6 +15,8 @@ namespace MtMan
         public DateTime DatePaid { get; set; }
         public DateTime ServiceDate { get; set; }
         public string Description { get; set; }
+        public int client_ID { get; set; }
+
 
     }
 }

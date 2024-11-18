@@ -1,4 +1,6 @@
-﻿namespace MtMan
+﻿
+
+namespace MtMan
 {
     public class Client
     {

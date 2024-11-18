@@ -90,7 +90,7 @@ namespace MtMan
             connection.Open();
 
             //Define the sql statment to fetch all jobs
-            MySqlCommand command = new MySqlCommand("INSERT INTO `job`(`Amount`, `Payment_Type`, `Date_Billed`, `Date_Paid`, 'Service_Date', 'Description') VALUES (@Amount, @Payment_Type, @Date_Billed, @Date_Paid, @Service_Date, @Description)", connection);
+            MySqlCommand command = new MySqlCommand("INSERT INTO `job`(`Amount`, `Payment_Type`, `Date_Billed`, `Date_Paid`, `Service_Date`, `Description`, `client_ID`) VALUES (@Amount, @Payment_Type, @Date_Billed, @Date_Paid, @Service_Date, @Description, @client_ID)", connection);
 
             command.Parameters.AddWithValue("@Amount", job.Amount);
             command.Parameters.AddWithValue("@Payment_Type", job.PaymentType);
@@ -98,6 +98,7 @@ namespace MtMan
             command.Parameters.AddWithValue("@Date_Paid", job.DatePaid);
             command.Parameters.AddWithValue("@Service_Date", job.ServiceDate);
             command.Parameters.AddWithValue("@Description", job.Description);
+            command.Parameters.AddWithValue("@client_ID", job.client_ID);
 
             int newRows = command.ExecuteNonQuery();
 

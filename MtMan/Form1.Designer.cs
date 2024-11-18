@@ -36,19 +36,19 @@
             label5 = new Label();
             JobFormBtn = new Button();
             jobGB = new GroupBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            amountTB = new TextBox();
-            paymentTB = new TextBox();
-            dateBilledTB = new TextBox();
-            datePdTB = new TextBox();
-            serviceDateTB = new TextBox();
-            descriptionTB = new RichTextBox();
             addJobBTN = new Button();
+            descriptionTB = new RichTextBox();
+            serviceDateTB = new TextBox();
+            datePdTB = new TextBox();
+            dateBilledTB = new TextBox();
+            paymentTB = new TextBox();
+            amountTB = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             jobGB.SuspendLayout();
@@ -141,50 +141,58 @@
             jobGB.TabStop = false;
             jobGB.Text = "Job Information";
             // 
-            // label1
+            // addJobBTN
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(17, 31);
-            label1.Name = "label1";
-            label1.Size = new Size(51, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Amount";
+            addJobBTN.Location = new Point(18, 278);
+            addJobBTN.Name = "addJobBTN";
+            addJobBTN.Size = new Size(75, 23);
+            addJobBTN.TabIndex = 12;
+            addJobBTN.Text = "Add Job";
+            addJobBTN.UseVisualStyleBackColor = true;
+            addJobBTN.Click += addJobBTN_Click;
             // 
-            // label2
+            // descriptionTB
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(17, 69);
-            label2.Name = "label2";
-            label2.Size = new Size(82, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Payment Type";
+            descriptionTB.Location = new Point(108, 217);
+            descriptionTB.Name = "descriptionTB";
+            descriptionTB.Size = new Size(174, 96);
+            descriptionTB.TabIndex = 11;
+            descriptionTB.Text = "";
             // 
-            // label3
+            // serviceDateTB
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(17, 107);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Date Billed";
+            serviceDateTB.Location = new Point(108, 179);
+            serviceDateTB.Name = "serviceDateTB";
+            serviceDateTB.Size = new Size(174, 23);
+            serviceDateTB.TabIndex = 10;
             // 
-            // label4
+            // datePdTB
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(17, 145);
-            label4.Name = "label4";
-            label4.Size = new Size(57, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Date Paid";
+            datePdTB.Location = new Point(108, 141);
+            datePdTB.Name = "datePdTB";
+            datePdTB.Size = new Size(174, 23);
+            datePdTB.TabIndex = 9;
             // 
-            // label6
+            // dateBilledTB
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(17, 183);
-            label6.Name = "label6";
-            label6.Size = new Size(71, 15);
-            label6.TabIndex = 4;
-            label6.Text = "Service Date";
+            dateBilledTB.Location = new Point(108, 103);
+            dateBilledTB.Name = "dateBilledTB";
+            dateBilledTB.Size = new Size(174, 23);
+            dateBilledTB.TabIndex = 8;
+            // 
+            // paymentTB
+            // 
+            paymentTB.Location = new Point(108, 65);
+            paymentTB.Name = "paymentTB";
+            paymentTB.Size = new Size(174, 23);
+            paymentTB.TabIndex = 7;
+            // 
+            // amountTB
+            // 
+            amountTB.Location = new Point(108, 27);
+            amountTB.Name = "amountTB";
+            amountTB.Size = new Size(174, 23);
+            amountTB.TabIndex = 6;
             // 
             // label7
             // 
@@ -195,58 +203,50 @@
             label7.TabIndex = 5;
             label7.Text = "Description";
             // 
-            // amountTB
+            // label6
             // 
-            amountTB.Location = new Point(108, 27);
-            amountTB.Name = "amountTB";
-            amountTB.Size = new Size(174, 23);
-            amountTB.TabIndex = 6;
+            label6.AutoSize = true;
+            label6.Location = new Point(17, 183);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 15);
+            label6.TabIndex = 4;
+            label6.Text = "Service Date";
             // 
-            // paymentTB
+            // label4
             // 
-            paymentTB.Location = new Point(108, 65);
-            paymentTB.Name = "paymentTB";
-            paymentTB.Size = new Size(174, 23);
-            paymentTB.TabIndex = 7;
+            label4.AutoSize = true;
+            label4.Location = new Point(17, 145);
+            label4.Name = "label4";
+            label4.Size = new Size(57, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Date Paid";
             // 
-            // dateBilledTB
+            // label3
             // 
-            dateBilledTB.Location = new Point(108, 103);
-            dateBilledTB.Name = "dateBilledTB";
-            dateBilledTB.Size = new Size(174, 23);
-            dateBilledTB.TabIndex = 8;
+            label3.AutoSize = true;
+            label3.Location = new Point(17, 107);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Date Billed";
             // 
-            // datePdTB
+            // label2
             // 
-            datePdTB.Location = new Point(108, 141);
-            datePdTB.Name = "datePdTB";
-            datePdTB.Size = new Size(174, 23);
-            datePdTB.TabIndex = 9;
+            label2.AutoSize = true;
+            label2.Location = new Point(17, 69);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Payment Type";
             // 
-            // serviceDateTB
+            // label1
             // 
-            serviceDateTB.Location = new Point(108, 179);
-            serviceDateTB.Name = "serviceDateTB";
-            serviceDateTB.Size = new Size(174, 23);
-            serviceDateTB.TabIndex = 10;
-            // 
-            // descriptionTB
-            // 
-            descriptionTB.Location = new Point(108, 217);
-            descriptionTB.Name = "descriptionTB";
-            descriptionTB.Size = new Size(174, 96);
-            descriptionTB.TabIndex = 11;
-            descriptionTB.Text = "";
-            // 
-            // addJobBTN
-            // 
-            addJobBTN.Location = new Point(18, 278);
-            addJobBTN.Name = "addJobBTN";
-            addJobBTN.Size = new Size(75, 23);
-            addJobBTN.TabIndex = 12;
-            addJobBTN.Text = "Add Job";
-            addJobBTN.UseVisualStyleBackColor = true;
-            addJobBTN.Click += addJobBTN_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 31);
+            label1.Name = "label1";
+            label1.Size = new Size(51, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Amount";
             // 
             // Form1
             // 
