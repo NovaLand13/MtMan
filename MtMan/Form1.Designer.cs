@@ -1,4 +1,5 @@
-﻿namespace MtMan
+﻿
+namespace MtMan
 {
     partial class Form1
     {
@@ -49,6 +50,7 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            clientCB = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             jobGB.SuspendLayout();
@@ -94,10 +96,11 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(426, 45);
+            dataGridView2.Location = new Point(620, 121);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(554, 211);
+            dataGridView2.Size = new Size(350, 174);
             dataGridView2.TabIndex = 5;
+            dataGridView2.Visible = false;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // label5
@@ -248,11 +251,21 @@
             label1.TabIndex = 0;
             label1.Text = "Amount";
             // 
+            // clientCB
+            // 
+            clientCB.FormattingEnabled = true;
+            clientCB.Location = new Point(428, 54);
+            clientCB.Name = "clientCB";
+            clientCB.Size = new Size(179, 23);
+            clientCB.TabIndex = 10;
+            clientCB.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 649);
+            Controls.Add(clientCB);
             Controls.Add(jobGB);
             Controls.Add(JobFormBtn);
             Controls.Add(label5);
@@ -269,6 +282,11 @@
             jobGB.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -293,5 +311,6 @@
         private TextBox paymentTB;
         private TextBox amountTB;
         private Button addJobBTN;
+        private ComboBox clientCB;
     }
 }

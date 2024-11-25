@@ -16,7 +16,6 @@ namespace MtMan
         public DateTime ServiceDate { get; set; }
         public string Description { get; set; }
         public int client_ID { get; set; }
-
-
+        
     }
 }

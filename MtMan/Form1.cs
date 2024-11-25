@@ -5,15 +5,11 @@ namespace MtMan
         BindingSource jobBindingSource = new BindingSource();
         BindingSource clientBindingSource = new BindingSource();
 
-       
+        List<Client> clients = new List<Client>();
+
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -32,16 +28,16 @@ namespace MtMan
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView dataGridView = (DataGridView)sender;
-
+            
+           // DataGridView dataGridView = (DataGridView)sender;
+/*
             //get the row number clicked
-            int rowClicked = dataGridView.CurrentRow.Index;
-
-            JobsDAO jobsDAO = new JobsDAO();
+            int rowClicked = clientCB.SelectedIndex;//dataGridView.CurrentRow.Index;
 
             //connect the list and th egrid view
-            jobBindingSource.DataSource = jobsDAO.getJobsUsingJoin((int)dataGridView.Rows[rowClicked].Cells[0].Value);
+            jobBindingSource.DataSource = clients[rowClicked].Job;
             dataGridView1.DataSource = jobBindingSource;
+            */
         }
 
         private void ClientBtn_Click(object sender, EventArgs e)
@@ -49,14 +45,22 @@ namespace MtMan
             ClientsDAO clientsDAO = new ClientsDAO();
 
             //connect the list and th egrid view
-            clientBindingSource.DataSource = clientsDAO.getAllClients();
+            clients = clientsDAO.getAllClients();
+            clientBindingSource.DataSource = clients;
+            clientCB.DataSource = clientBindingSource;
+            clientCB.DisplayMember = "Name";
+            clientCB.ValueMember = "ID";
             dataGridView2.DataSource = clientBindingSource;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e){}
+        private void groupBox1_Enter(object sender, EventArgs e) 
+        {
+        }
 
 
-        private void addClientBtn_Click(object sender, EventArgs e){ }
+        private void addClientBtn_Click(object sender, EventArgs e) 
+        { 
+        }
 
         private void JobFormBtn_Click(object sender, EventArgs e)
         {
@@ -91,7 +95,7 @@ namespace MtMan
 
                 JobsDAO jobsDAO = new JobsDAO();
                 int result = jobsDAO.addJob(job);
-            
+
                 MessageBox.Show("Job added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (FormatException ex)
@@ -102,6 +106,18 @@ namespace MtMan
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // DataGridView dataGridView = (DataGridView)sender;
+
+            //get the row number clicked
+            int rowClicked = clientCB.SelectedIndex;//dataGridView.CurrentRow.Index;
+
+            //connect the list and th egrid view
+            jobBindingSource.DataSource = clients[rowClicked].Job;
+            dataGridView1.DataSource = jobBindingSource;
         }
     }
 }

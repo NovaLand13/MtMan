@@ -120,29 +120,34 @@ namespace MtMan
             List<Client> returnThese = new List<Client>();
 
             //connect to database
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-
-            //Define the sql statment to fetch all jobs
-            MySqlCommand command = new MySqlCommand("Select * From client", connection);
-
-            using (MySqlDataReader reader = command.ExecuteReader())
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                while (reader.Read())
-                {
-                    Client c = new Client
-                    {
-                        ID = reader.GetInt32(0),
-                        Name = reader.GetString(1),
-                        Address = reader.GetString(2),
-                        Phone_Number = reader.GetString(3),
-                        Email = reader.GetString(4)                        
-                    };
-                    returnThese.Add(c);
-                }
+                connection.Open();
+                //Define the sql statment to fetch all jobs
+                MySqlCommand command = new MySqlCommand("Select * From client", connection);
 
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Client c = new Client
+                        {
+                            ID = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            Address = reader.GetString(2),
+                            Phone_Number = reader.GetString(3),
+                            Email = reader.GetString(4)
+                        };
+
+                        JobsDAO jobsDAO = new JobsDAO();
+                        c.Job = jobsDAO.getJobs(c.ID);
+                        returnThese.Add(c);
+                    }
+                    connection.Close();
+
+                }
             }
-            connection.Close();
+              
             return returnThese;
         }
 

@@ -9,6 +9,7 @@ namespace MtMan
         public string Address { get; set; }
         public string Phone_Number { get; set; }
         public string Email { get; set; }
+        public List<Job> Job { get; set; }
         
     }
 }
