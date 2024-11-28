@@ -33,8 +33,6 @@ namespace MtMan
             searchBtn = new Button();
             searchTB = new TextBox();
             ClientBtn = new Button();
-            dataGridView2 = new DataGridView();
-            label5 = new Label();
             JobFormBtn = new Button();
             jobGB = new GroupBox();
             addJobBTN = new Button();
@@ -52,16 +50,15 @@ namespace MtMan
             label1 = new Label();
             clientCB = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             jobGB.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(426, 303);
+            dataGridView1.Location = new Point(361, 60);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(647, 334);
+            dataGridView1.Size = new Size(672, 557);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -85,32 +82,14 @@ namespace MtMan
             // 
             // ClientBtn
             // 
-            ClientBtn.Location = new Point(426, 16);
+            ClientBtn.Location = new Point(237, 594);
             ClientBtn.Name = "ClientBtn";
             ClientBtn.Size = new Size(75, 23);
             ClientBtn.TabIndex = 4;
             ClientBtn.Text = "Clients";
             ClientBtn.UseVisualStyleBackColor = true;
+            ClientBtn.Visible = false;
             ClientBtn.Click += ClientBtn_Click;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(620, 121);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(350, 174);
-            dataGridView2.TabIndex = 5;
-            dataGridView2.Visible = false;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(429, 280);
-            label5.Name = "label5";
-            label5.Size = new Size(30, 15);
-            label5.TabIndex = 7;
-            label5.Text = "Jobs";
             // 
             // JobFormBtn
             // 
@@ -254,7 +233,7 @@ namespace MtMan
             // clientCB
             // 
             clientCB.FormattingEnabled = true;
-            clientCB.Location = new Point(428, 54);
+            clientCB.Location = new Point(361, 17);
             clientCB.Name = "clientCB";
             clientCB.Size = new Size(179, 23);
             clientCB.TabIndex = 10;
@@ -268,8 +247,6 @@ namespace MtMan
             Controls.Add(clientCB);
             Controls.Add(jobGB);
             Controls.Add(JobFormBtn);
-            Controls.Add(label5);
-            Controls.Add(dataGridView2);
             Controls.Add(ClientBtn);
             Controls.Add(searchTB);
             Controls.Add(searchBtn);
@@ -277,7 +254,6 @@ namespace MtMan
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             jobGB.ResumeLayout(false);
             jobGB.PerformLayout();
             ResumeLayout(false);
@@ -294,8 +270,6 @@ namespace MtMan
         private Button searchBtn;
         private TextBox searchTB;
         private Button ClientBtn;
-        private DataGridView dataGridView2;
-        private Label label5;
         private Button JobFormBtn;
         private GroupBox jobGB;
         private Label label2;

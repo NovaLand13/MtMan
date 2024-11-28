@@ -10,6 +10,14 @@ namespace MtMan
         public Form1()
         {
             InitializeComponent();
+            ClientsDAO clientsDAO = new ClientsDAO();
+
+            //connect the list and th egrid view
+            clients = clientsDAO.getAllClients();
+            clientBindingSource.DataSource = clients;
+            clientCB.DataSource = clientBindingSource;
+            clientCB.DisplayMember = "Name";
+            clientCB.ValueMember = "ID";
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -18,7 +26,7 @@ namespace MtMan
 
             //connect the list and th egrid view
             clientBindingSource.DataSource = clientsDAO.searchClients(searchTB.Text);
-            dataGridView2.DataSource = clientBindingSource;
+            clientCB.DataSource = clientBindingSource;
         }
 
         private void searchTB_TextChanged(object sender, EventArgs e)
@@ -28,20 +36,12 @@ namespace MtMan
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-           // DataGridView dataGridView = (DataGridView)sender;
-/*
-            //get the row number clicked
-            int rowClicked = clientCB.SelectedIndex;//dataGridView.CurrentRow.Index;
-
-            //connect the list and th egrid view
-            jobBindingSource.DataSource = clients[rowClicked].Job;
-            dataGridView1.DataSource = jobBindingSource;
-            */
+                       
         }
 
         private void ClientBtn_Click(object sender, EventArgs e)
         {
+            /*
             ClientsDAO clientsDAO = new ClientsDAO();
 
             //connect the list and th egrid view
@@ -50,7 +50,7 @@ namespace MtMan
             clientCB.DataSource = clientBindingSource;
             clientCB.DisplayMember = "Name";
             clientCB.ValueMember = "ID";
-            dataGridView2.DataSource = clientBindingSource;
+            */
         }
 
         private void groupBox1_Enter(object sender, EventArgs e) 
@@ -79,7 +79,7 @@ namespace MtMan
                 DateTime datePaid = DateTime.Parse(datePdTB.Text);
                 DateTime serviceDate = DateTime.Parse(serviceDateTB.Text);
                 string description = descriptionTB.Text;
-                int client_ID = 5;
+                int client_ID = (int)clientCB.SelectedValue;
 
                 // Create a new Job object
                 Job job = new Job
@@ -93,7 +93,10 @@ namespace MtMan
                     client_ID = client_ID
                 };
 
+                Client client = clients.FirstOrDefault(c => c.ID == client_ID);
+
                 JobsDAO jobsDAO = new JobsDAO();
+                client.Job.Add(job);
                 int result = jobsDAO.addJob(job);
 
                 MessageBox.Show("Job added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,12 +113,10 @@ namespace MtMan
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // DataGridView dataGridView = (DataGridView)sender;
-
             //get the row number clicked
-            int rowClicked = clientCB.SelectedIndex;//dataGridView.CurrentRow.Index;
+            int rowClicked = clientCB.SelectedIndex;
 
-            //connect the list and th egrid view
+            //connect the list and the grid view
             jobBindingSource.DataSource = clients[rowClicked].Job;
             dataGridView1.DataSource = jobBindingSource;
         }
