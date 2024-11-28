@@ -40,7 +40,6 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView2 = new DataGridView();
-            ClientBtn = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
@@ -154,16 +153,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(554, 211);
             dataGridView2.TabIndex = 8;
-            // 
-            // ClientBtn
-            // 
-            ClientBtn.Location = new Point(389, 40);
-            ClientBtn.Name = "ClientBtn";
-            ClientBtn.Size = new Size(75, 23);
-            ClientBtn.TabIndex = 9;
-            ClientBtn.Text = "Clients";
-            ClientBtn.UseVisualStyleBackColor = true;
-            ClientBtn.Click += ClientBtn_Click;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // JobForm
             // 
@@ -171,7 +161,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1027, 611);
-            Controls.Add(ClientBtn);
             Controls.Add(dataGridView2);
             Controls.Add(groupBox1);
             Controls.Add(formBtn);
@@ -197,6 +186,5 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView2;
-        private Button ClientBtn;
     }
 }

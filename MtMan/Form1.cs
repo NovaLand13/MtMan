@@ -41,16 +41,7 @@ namespace MtMan
 
         private void ClientBtn_Click(object sender, EventArgs e)
         {
-            /*
-            ClientsDAO clientsDAO = new ClientsDAO();
-
-            //connect the list and th egrid view
-            clients = clientsDAO.getAllClients();
-            clientBindingSource.DataSource = clients;
-            clientCB.DataSource = clientBindingSource;
-            clientCB.DisplayMember = "Name";
-            clientCB.ValueMember = "ID";
-            */
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e) 
@@ -119,6 +110,9 @@ namespace MtMan
             //connect the list and the grid view
             jobBindingSource.DataSource = clients[rowClicked].Job;
             dataGridView1.DataSource = jobBindingSource;
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.Columns["ID"].Visible = false;
+            dataGridView1.Columns["client_ID"].Visible = false;
         }
     }
 }

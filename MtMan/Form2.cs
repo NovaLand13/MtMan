@@ -18,6 +18,14 @@ namespace MtMan
         public JobForm()
         {
             InitializeComponent();
+
+            ClientsDAO clientsDAO = new ClientsDAO();
+
+            //connect the list and th egrid view
+            clientBindingSource.DataSource = clientsDAO.getAllClients();
+            dataGridView2.DataSource = clientBindingSource;
+            dataGridView2.AutoGenerateColumns = true;
+            dataGridView2.Columns["ID"].Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -29,6 +37,7 @@ namespace MtMan
         {
             Form1 form1 = new Form1();
             form1.Show();
+            
         }
 
         private void addClientBtn_Click(object sender, EventArgs e)
@@ -49,11 +58,12 @@ namespace MtMan
 
         private void ClientBtn_Click(object sender, EventArgs e)
         {
-            ClientsDAO clientsDAO = new ClientsDAO();
+            
+        }
 
-            //connect the list and th egrid view
-            clientBindingSource.DataSource = clientsDAO.getAllClients();
-            dataGridView2.DataSource = clientBindingSource;
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
