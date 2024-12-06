@@ -18,6 +18,7 @@ namespace MtMan
             clientCB.DataSource = clientBindingSource;
             clientCB.DisplayMember = "Name";
             clientCB.ValueMember = "ID";
+                                        
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace MtMan
         {
             JobForm form = new JobForm();
             form.Show();
+                        
         }
 
         private void addJobBTN_Click(object sender, EventArgs e)
@@ -113,6 +115,9 @@ namespace MtMan
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.Columns["ID"].Visible = false;
             dataGridView1.Columns["client_ID"].Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSize = true;
+            dataGridView1.AllowUserToOrderColumns = true;
         }
     }
 }

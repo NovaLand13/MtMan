@@ -209,5 +209,43 @@ namespace MtMan
 
             return newRows;
         }
+
+        internal int updateClient(Client client)//************************************
+        {
+            //connect to database
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                //Define the sql statment to update client information
+                string sql = "UPDATE `client` SET `Address` = @Address, `Phone_Number` = @Phone_Number, `Email` = @Email WHERE ID = @client_ID";
+                MySqlCommand command = new MySqlCommand(sql, connection);
+
+                command.Parameters.AddWithValue("@client_ID", client.ID);
+                command.Parameters.AddWithValue("@Address", client.Address);
+                command.Parameters.AddWithValue("@Phone_Number", client.Phone_Number);
+                command.Parameters.AddWithValue("@Email", client.Email);
+
+                // Execute the command and get the number of rows affected
+                int rowsAffected = command.ExecuteNonQuery();
+
+                return rowsAffected;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            
+
+            
+
+            
+        }
     }
 }

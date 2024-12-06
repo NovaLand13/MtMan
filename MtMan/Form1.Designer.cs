@@ -32,7 +32,6 @@ namespace MtMan
             dataGridView1 = new DataGridView();
             searchBtn = new Button();
             searchTB = new TextBox();
-            ClientBtn = new Button();
             JobFormBtn = new Button();
             jobGB = new GroupBox();
             addJobBTN = new Button();
@@ -64,7 +63,7 @@ namespace MtMan
             // 
             // searchBtn
             // 
-            searchBtn.Location = new Point(620, 16);
+            searchBtn.Location = new Point(595, 17);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(75, 23);
             searchBtn.TabIndex = 2;
@@ -74,30 +73,19 @@ namespace MtMan
             // 
             // searchTB
             // 
-            searchTB.Location = new Point(701, 16);
+            searchTB.Location = new Point(676, 17);
             searchTB.Name = "searchTB";
             searchTB.Size = new Size(191, 23);
             searchTB.TabIndex = 3;
             searchTB.TextChanged += searchTB_TextChanged;
             // 
-            // ClientBtn
-            // 
-            ClientBtn.Location = new Point(237, 594);
-            ClientBtn.Name = "ClientBtn";
-            ClientBtn.Size = new Size(75, 23);
-            ClientBtn.TabIndex = 4;
-            ClientBtn.Text = "Clients";
-            ClientBtn.UseVisualStyleBackColor = true;
-            ClientBtn.Visible = false;
-            ClientBtn.Click += ClientBtn_Click;
-            // 
             // JobFormBtn
             // 
-            JobFormBtn.Location = new Point(12, 614);
+            JobFormBtn.Location = new Point(897, 16);
             JobFormBtn.Name = "JobFormBtn";
             JobFormBtn.Size = new Size(136, 23);
             JobFormBtn.TabIndex = 8;
-            JobFormBtn.Text = "Add New Client";
+            JobFormBtn.Text = "Client Information";
             JobFormBtn.UseVisualStyleBackColor = true;
             JobFormBtn.Click += JobFormBtn_Click;
             // 
@@ -247,7 +235,6 @@ namespace MtMan
             Controls.Add(clientCB);
             Controls.Add(jobGB);
             Controls.Add(JobFormBtn);
-            Controls.Add(ClientBtn);
             Controls.Add(searchTB);
             Controls.Add(searchBtn);
             Controls.Add(dataGridView1);
@@ -269,7 +256,6 @@ namespace MtMan
         private DataGridView dataGridView1;
         private Button searchBtn;
         private TextBox searchTB;
-        private Button ClientBtn;
         private Button JobFormBtn;
         private GroupBox jobGB;
         private Label label2;

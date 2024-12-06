@@ -40,13 +40,25 @@
             label2 = new Label();
             label1 = new Label();
             dataGridView2 = new DataGridView();
+            groupBox2 = new GroupBox();
+            clientIDupdateTB = new TextBox();
+            updateClientBtn = new Button();
+            emailUpdateTB = new TextBox();
+            phoneUpdateTB = new TextBox();
+            addressUpdateTB = new TextBox();
+            nameUpdateTB = new TextBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // formBtn
             // 
-            formBtn.Location = new Point(899, 576);
+            formBtn.Location = new Point(682, 26);
             formBtn.Name = "formBtn";
             formBtn.Size = new Size(116, 23);
             formBtn.TabIndex = 0;
@@ -67,14 +79,15 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(21, 26);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(312, 257);
+            groupBox1.Size = new Size(197, 257);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Add Client";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // addClientBtn
             // 
-            addClientBtn.Location = new Point(204, 18);
+            addClientBtn.Location = new Point(94, 18);
             addClientBtn.Name = "addClientBtn";
             addClientBtn.Size = new Size(75, 23);
             addClientBtn.TabIndex = 8;
@@ -149,11 +162,114 @@
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(389, 72);
+            dataGridView2.Location = new Point(244, 73);
             dataGridView2.Name = "dataGridView2";
-            dataGridView2.Size = new Size(554, 211);
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.Size = new Size(710, 486);
             dataGridView2.TabIndex = 8;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(clientIDupdateTB);
+            groupBox2.Controls.Add(updateClientBtn);
+            groupBox2.Controls.Add(emailUpdateTB);
+            groupBox2.Controls.Add(phoneUpdateTB);
+            groupBox2.Controls.Add(addressUpdateTB);
+            groupBox2.Controls.Add(nameUpdateTB);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Location = new Point(21, 301);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(200, 262);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Update Client";
+            // 
+            // clientIDupdateTB
+            // 
+            clientIDupdateTB.Location = new Point(9, 224);
+            clientIDupdateTB.Name = "clientIDupdateTB";
+            clientIDupdateTB.Size = new Size(100, 23);
+            clientIDupdateTB.TabIndex = 9;
+            clientIDupdateTB.Visible = false;
+            clientIDupdateTB.TextChanged += textBox1_TextChanged;
+            // 
+            // updateClientBtn
+            // 
+            updateClientBtn.Location = new Point(127, 235);
+            updateClientBtn.Name = "updateClientBtn";
+            updateClientBtn.Size = new Size(75, 23);
+            updateClientBtn.TabIndex = 8;
+            updateClientBtn.Text = "Update Client";
+            updateClientBtn.UseVisualStyleBackColor = true;
+            updateClientBtn.Click += updateClientBtn_Click;
+            // 
+            // emailUpdateTB
+            // 
+            emailUpdateTB.Location = new Point(7, 193);
+            emailUpdateTB.Name = "emailUpdateTB";
+            emailUpdateTB.Size = new Size(162, 23);
+            emailUpdateTB.TabIndex = 7;
+            // 
+            // phoneUpdateTB
+            // 
+            phoneUpdateTB.Location = new Point(7, 145);
+            phoneUpdateTB.Name = "phoneUpdateTB";
+            phoneUpdateTB.Size = new Size(162, 23);
+            phoneUpdateTB.TabIndex = 6;
+            // 
+            // addressUpdateTB
+            // 
+            addressUpdateTB.Location = new Point(7, 97);
+            addressUpdateTB.Name = "addressUpdateTB";
+            addressUpdateTB.Size = new Size(162, 23);
+            addressUpdateTB.TabIndex = 5;
+            // 
+            // nameUpdateTB
+            // 
+            nameUpdateTB.Location = new Point(7, 49);
+            nameUpdateTB.Name = "nameUpdateTB";
+            nameUpdateTB.Size = new Size(162, 23);
+            nameUpdateTB.TabIndex = 4;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(7, 173);
+            label8.Name = "label8";
+            label8.Size = new Size(36, 15);
+            label8.TabIndex = 3;
+            label8.Text = "Email";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(7, 125);
+            label7.Name = "label7";
+            label7.Size = new Size(88, 15);
+            label7.TabIndex = 2;
+            label7.Text = "Phone Number";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(7, 77);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 15);
+            label6.TabIndex = 1;
+            label6.Text = "Address";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(7, 29);
+            label5.Name = "label5";
+            label5.Size = new Size(39, 15);
+            label5.TabIndex = 0;
+            label5.Text = "Name";
             // 
             // JobForm
             // 
@@ -161,6 +277,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(1027, 611);
+            Controls.Add(groupBox2);
             Controls.Add(dataGridView2);
             Controls.Add(groupBox1);
             Controls.Add(formBtn);
@@ -169,6 +286,8 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -186,5 +305,16 @@
         private Label label2;
         private Label label1;
         private DataGridView dataGridView2;
+        private GroupBox groupBox2;
+        private TextBox addressUpdateTB;
+        private TextBox nameUpdateTB;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Button updateClientBtn;
+        private TextBox emailUpdateTB;
+        private TextBox phoneUpdateTB;
+        private TextBox clientIDupdateTB;
     }
 }
